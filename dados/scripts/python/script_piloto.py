@@ -1,16 +1,16 @@
 # IMPORTAMTO AS BIBLIOTECAS
-import pandas as pd 
+import pandas as pd
+from pathlib import Path
 
-#----------------------------------# 
+# ---------------------------------- #
 
-# CRIANDO MEU DF 
+# CRIANDO MEU DF
+BASE_DIR = Path(__file__).resolve().parent.parent.parent.parent
+path = BASE_DIR / "dados" / "dados" / "tab_imdb.csv"
 
-caminho = r"dados\tab_imdb.csv"
+df = pd.read_csv(path, sep=",")
 
-df = pd.read_csv(caminho, sep=",")
+# ---------------------------------- #
 
-# ----------------------------------# 
-
-# IMPRIMINDO AS 5 PRIMEIRAS LINHAS DO DF
-
-print(df.head())
+# IMPRIMINDO MEU DF
+print(df)
